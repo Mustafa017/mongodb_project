@@ -1,0 +1,26 @@
+{
+  "name": "mongodb_project",
+  "version": "1.0.0",
+  "description": "using mongodb with node js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mustafa017/mongodb_project.git"
+  },
+  "engines": {
+    "node": "12.16.2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mustafa017/mongodb_project/issues"
+  },
+  "homepage": "https://github.com/Mustafa017/mongodb_project#readme",
+  "devDependencies": {
+    "mongodb": "^3.4.0"
+  }
+}
