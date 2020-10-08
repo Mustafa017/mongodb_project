@@ -85,12 +85,29 @@
             })
         }
 
+        function remove(id) {
+            return new Promise(async (resolve, reject) => {
+                const client = new MongoClient(url, { useUnifiedTopology: true });
+                try {
+                    await client.connect();
+                    const db = client.db(dbName);
+                    const removedItem = await db.collection('newspapers').deleteOne({_id: ObjectID(id)});
+                    // console.log(removedItem);
+                    resolve(removedItem.deletedCount == 1);
+                    client.close();
+                } catch (error) {
+                    reject(error);
+                }
+            })
+        }
+
         return {
             loadData,
             get,
             getById,
             add,
-            update
+            update,
+            remove
         }
     }
 

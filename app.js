@@ -57,6 +57,11 @@ const { get } = require("./repos/circulationRepo");
             });
             const updatedItem = await circulationRepo.getById(addedItem._id)
             assert.deepStrictEqual(updatedItem.Newspaper,'The Standard');
+
+            const removedItem = await circulationRepo.remove(addedItem._id);
+            assert(removedItem);
+            const removedItemQuery = await circulationRepo.getById(addedItem._id);
+            assert.strictEqual(removedItemQuery, null);
             
         } catch (error) {
             console.log(error);
